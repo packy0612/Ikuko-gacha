@@ -290,7 +290,7 @@ transition:opacity .15s;
 
   <!-- ガチャボタン -->
 
-  <button class="gacha-btn" id="gachaBtn" onclick="drawGacha()">
+  <button class="gacha-btn" id="gachaBtn">
     <span class="btn-icon">🎲</span>引く！
   </button>
 
@@ -302,7 +302,7 @@ transition:opacity .15s;
       <span class="count-num" id="countNum">0</span>
       <span>回</span>
     </div>
-    <button class="reset-btn" onclick="resetCollection()">コレクションをリセット</button>
+    <button class="reset-btn" id="resetBtn">コレクションをリセット</button>
   </div>
 
 </div>
@@ -493,6 +493,10 @@ collected.clear();
 saveCollection();
 updateCollUI();
 }
+
+// ─── イベント登録 ────────────────────────────────
+document.getElementById(‘gachaBtn’).addEventListener(‘click’, drawGacha);
+document.getElementById(‘resetBtn’).addEventListener(‘click’, resetCollection);
 </script>
 
 </body>
